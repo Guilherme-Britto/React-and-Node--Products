@@ -1,14 +1,10 @@
 import "reflect-metadata";
-import "express-async-errors";
 import express from "express";
-import userRoutes from "./routes/users.routes";
-import { handleErros } from "./error";
+import productRoutes from "./routes/products.routes";
 
 const app = express();
 app.use(express.json());
 
-app.use("/products", userRoutes);
-
-app.use(handleErros);
+app.use("/products", productRoutes);
 
 export default app;
