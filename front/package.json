@@ -1,5 +1,5 @@
 {
-  "name": "kenzie-hub",
+  "name": "products",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,7 +15,6 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.1",
     "react-router-dom": "^6.8.1",
-    "react-toastify": "^9.1.1",
     "styled-components": "^5.3.6",
     "uuid": "^9.0.0",
     "yup": "^1.0.0"

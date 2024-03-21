@@ -1,56 +1,60 @@
-import { HomeMain, TechInfo, UserInfo } from './style';
+import { HomeMain, ProductInfo } from './style';
 import { useContext } from 'react';
-import { FormCreateTech } from '../../components/FormCreateTech';
-import { TechsContext } from '../../providers/TechsContext/TechsContext';
-import { TechsList } from '../../components/TechsList';
-import { FormUpdateTech } from '../../components/FormUpdateTech';
+import { FormCreateProduct } from '../../components/FormCreateProduct';
+import { ProductsContext } from '../../providers/ProductsContext/ProductsContext';
+import { ProductsList } from '../../components/ProductsList';
+import { FormUpdateProduct } from '../../components/FormUpdateProduct';
 import { Modal } from '../../styles/styles';
 
 const Home = () => {
   const {
-    creatingTechModal,
-    SetCreatingTechModal,
-    SetUpdatingTechModal,
-    updaingTechModal,
-  } = useContext(TechsContext);
-  const loading = false;
+    creatingProductModal,
+    SetCreatingProductModal,
+    SetUpdatingProductModal,
+    updaingProductModal,
+    loading,
+  } = useContext(ProductsContext);
+
   if (loading) {
     return (
       <HomeMain>
-        <header>header</header>
-        <h1 className='colorgrey0'>Carregando...</h1>
+        <header>
+          <h1>Produtos</h1>
+        </header>
+        <h2 className='colorgrey0'>Carregando...</h2>
       </HomeMain>
     );
   }
 
   return (
     <HomeMain>
-      <header>header</header>
-
-      <TechInfo>
-        <section className='techInfoHeader'>
-          <h1 className='colorgrey0 weigth700'>Tecnologias</h1>
+      <header>
+        <h1>Produtos</h1>
+      </header>
+      <ProductInfo>
+        <section className='productInfoHeader'>
+          <h2 className='colorgrey0 weigth700'>Produtos</h2>
           <button
             className='colorgrey0 weigth700'
             onClick={() => (
-              SetCreatingTechModal(true), SetUpdatingTechModal(false)
+              SetCreatingProductModal(true), SetUpdatingProductModal(false)
             )}
           >
             +
           </button>
         </section>
-        <TechsList />
+        <ProductsList />
         <Modal>
           <div className='modalDiv'>
-            {creatingTechModal && <FormCreateTech />}
+            {creatingProductModal && <FormCreateProduct />}
           </div>
         </Modal>
         <Modal>
           <div className='modalDiv'>
-            {updaingTechModal && <FormUpdateTech />}
+            {updaingProductModal && <FormUpdateProduct />}
           </div>
         </Modal>
-      </TechInfo>
+      </ProductInfo>
     </HomeMain>
   );
 };

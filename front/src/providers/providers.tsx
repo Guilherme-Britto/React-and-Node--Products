@@ -1,8 +1,8 @@
-import { IDefaultProviderProps } from './TechsContext/@types';
-import { TechsProvider } from './TechsContext/TechsContext';
+import { IDefaultProviderProps } from './ProductsContext/@types';
+import { ProductsProvider } from './ProductsContext/ProductsContext';
 
 const Providers = ({ children }: IDefaultProviderProps) => {
-  return <TechsProvider>{children}</TechsProvider>;
+  return <ProductsProvider>{children}</ProductsProvider>;
 };
 
 export default Providers;
